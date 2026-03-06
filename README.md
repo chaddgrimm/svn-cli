@@ -7,10 +7,8 @@ Minimal Alpine-based Docker image for the Subversion (SVN) client. Use it as a d
 Add this alias to your shell config (`~/.zshrc` or `~/.bashrc`):
 
 ```bash
-alias svn='docker run --rm -v "$PWD":/app -w /app YOUR_DOCKERHUB_USERNAME/svn'
+alias svn='docker run --rm -v "$PWD":/app -w /app chaddgrimm/svn:<VERSION>-cli'
 ```
-
-Replace `YOUR_DOCKERHUB_USERNAME` with your Docker Hub username (e.g. `myuser/svn`).
 
 Then run SVN commands as usual:
 
