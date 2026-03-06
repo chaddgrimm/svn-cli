@@ -7,7 +7,7 @@ Minimal Alpine-based Docker image for the Subversion (SVN) client. Use it as a d
 Add this alias to your shell config (`~/.zshrc` or `~/.bashrc`):
 
 ```bash
-alias svn='docker run --rm -v "$PWD":/app -w /app chaddgrimm/svn:<VERSION>-cli'
+alias svn='docker run --rm -v "$PWD":/app -w /app chaddgrimm/svn-cli:<VERSION>'
 ```
 
 Then run SVN commands as usual:
@@ -23,8 +23,8 @@ svn update
 Images are tagged by the SVN binary version:
 
 - `latest` - always points to the newest build
-- `1.14.5-cli` - full version (patch level)
-- `1.14-cli` - minor version (floats to latest patch)
+- `1.14.5` - full version (patch level)
+- `1.14` - minor version (floats to latest patch)
 
 ## Image size
 
