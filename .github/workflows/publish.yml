@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: '0 0 * * 0'
   workflow_dispatch:
 
 jobs:
@@ -48,8 +48,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/svn:${{ steps.version.outputs.svn_version }}-cli
-            ${{ secrets.DOCKERHUB_USERNAME }}/svn:${{ steps.version.outputs.minor_version }}-cli
-            ${{ secrets.DOCKERHUB_USERNAME }}/svn:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/svn-cli:${{ steps.version.outputs.svn_version }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/svn-cli:${{ steps.version.outputs.minor_version }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/svn-cli:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
