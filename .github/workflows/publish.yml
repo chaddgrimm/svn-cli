@@ -38,8 +38,6 @@ jobs:
             exit 1
           fi
           echo "svn_version=$SVN_VERSION" >> $GITHUB_OUTPUT
-          MINOR_VERSION=$(echo "$SVN_VERSION" | cut -d. -f1,2)
-          echo "minor_version=$MINOR_VERSION" >> $GITHUB_OUTPUT
 
       - name: Build and push multi-platform image
         uses: docker/build-push-action@v6
@@ -49,7 +47,6 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/svn-cli:${{ steps.version.outputs.svn_version }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/svn-cli:${{ steps.version.outputs.minor_version }}
             ${{ secrets.DOCKERHUB_USERNAME }}/svn-cli:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max

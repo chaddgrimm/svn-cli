@@ -24,7 +24,6 @@ Images are tagged by the SVN binary version:
 
 - `latest` - always points to the newest build
 - `1.14.5` - full version (patch level)
-- `1.14` - minor version (floats to latest patch)
 
 ## Image size
 
